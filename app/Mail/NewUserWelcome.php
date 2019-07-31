@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class FeedbackMail extends Mailable
+class NewUserWelcome extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -28,6 +28,8 @@ class FeedbackMail extends Mailable
      */
     public function build()
     {
-        return $this->view('pages.contact');
+        return $this
+            // ->subject('Mail Subject Here.')
+            ->markdown('emails.user.newuserwelcome');
     }
 }

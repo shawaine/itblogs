@@ -10,10 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes(['verify' => true]);
+
 
 Route::get('/', 'PagesController@index');
 
 Route::get('/about', 'PagesController@about');
+
+Route::get('/settings', 'PagesController@settings')->middleware('verified');
 
 Route::get('/services', 'PagesController@services');
 
@@ -31,6 +35,8 @@ Route::resource('posts', 'PostsController');
 //     return 'My name is' . $name;
 // });
 
-Auth::routes();
 
 Route::get('/dashboard', 'DashBoardController@index');
+
+//Route name
+Route::get('/email', 'MailController@greetNewUser')->name('sendEmail');

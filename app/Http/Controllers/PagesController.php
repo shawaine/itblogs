@@ -15,6 +15,7 @@ class PagesController extends Controller
         $data = array(
             'info' => 'Welcome to about page!'
         );
+        // checks if user has verified email
         return view('pages.about')
             ->with($data)
             ->with('page', 'about');
@@ -34,17 +35,26 @@ class PagesController extends Controller
 
     public function contact_us()
     {
-        // checks if user is not authorized
-        // if (auth()->user()->id !== $post->user_id) {
-        //     return redirect('/posts')
-        //         ->with('error', 'Unauthorized Page')
-        //         ->with('page', 'blog');;
-        // } else {
-        //     return view('posts.edit')
-        //         ->with('post', $post)
-        //         ->with('page', 'blog');
-        // }
-        return view('pages.contact')
-            ->with('page', 'contact');
+        // checks if user has email or loggedin
+        if (empty(auth()->user()->email)) {
+            return view('pages.contact')
+                ->with('email', old('email'))
+                ->with('page', 'contact');
+        } else {
+            return view('pages.contact')
+                ->with('email', auth()->user()->email)
+                ->with('page', 'contact');
+        }
+    }
+
+    public function settings()
+    {
+        // checks if user has verified email
+        if (auth()->user()->email_verified_at) {
+            return view('pages.settings')
+                ->with('page', 'settings');
+        } else {
+            return redirect('/email/verify');
+        }
     }
 }

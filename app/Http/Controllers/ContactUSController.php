@@ -37,7 +37,7 @@ class ContactUSController extends Controller
                 'user_message' => $request->get('message')
             ),
             function ($message) {
-                $message->from('blogit_feedback@gmail.com');
+                $message->from('blogit_feedback@noreply.com');
                 $message->to(env('MAIL_USERNAME'), 'Blog IT')->subject('Blog IT Feedback');
             }
         );

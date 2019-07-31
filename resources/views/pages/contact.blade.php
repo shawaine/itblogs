@@ -12,7 +12,7 @@
             </div>
             <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
                 {!! Form::label('Email:') !!}
-                {!! Form::text('email', old('email'), ['class'=>'form-control', 'placeholder'=>'Enter Email']) !!}
+                {!! Form::text('email', $email, ['class'=>'form-control', 'placeholder'=>'Enter Email']) !!}
                 <span class="text-danger">{{ $errors->first('email') }}</span>
             </div>
             <div class="form-group {{ $errors->has('message') ? 'has-error' : '' }}">
