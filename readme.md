@@ -1,3 +1,18 @@
+# IT Blogs
+
+A blog site for IT students and those aspiring IT students, feel free to message me for improvements of the blog site. Thank you.
+
+# Getting Started
+
+Make a .env file and insert values for DB at APP based on .env.example in root folder.
+Make a database in your localhost for migrations.
+Then run these commands. Make sure you run these commands in root folder.
+
+-   composer install
+-   php artisan migrate
+-   php artisan serve
+    You can now access the project at localhost:8000
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
@@ -6,18 +21,6 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
-
-# Getting Started
-
-Make a .env file and insert values for DB at APP based on .env.example in root folder.
-
-Then run these commands. Make sure you run these commands in root folder.
-
--   composer install
--   npm install
--   php artisan migrate
--   php artisan serve
-    You can now access the project at localhost:8000
 
 ## About Laravel
 

@@ -17,8 +17,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="icon" href="{{ asset('icon/favicon.png') }}"  sizes="16x16">
-    {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
-    <title>Blog IT</title>
+    <title>{{ config('app.name', 'IT Blogs') }}</title>
+    
 </head>
 <body>
     {{-- <div id="app"> --}} 
